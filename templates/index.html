@@ -17,8 +17,8 @@
             {% if error %}
                 <p class="error">{{ error }}</p>
             {% endif %}
-            <form action="/convert" method="post">
-                <input type="text" name="conversion_request" placeholder="Paste your code followed by the target language (e.g., Python to JavaScript)">
+            <form action="/search" method="post">
+                <input type="text" name="search_query" placeholder="Paste your code followed by the target language (e.g., Python to JavaScript)">
                 <button type="submit">Convert</button>
             </form>
         </section>
