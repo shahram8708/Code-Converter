@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import requests
 import logging
 import subprocess
@@ -46,11 +46,9 @@ def search():
             code_content, language = extract_code(response)
             if code_content:
                 formatted_code = format_code(code_content, language)
-                return render_template('result.html', code_content=formatted_code)
-        error_msg = "Failed to Convert Code. Please try again."
-    else:
-        error_msg = "Please enter a valid code prompt."
-    return render_template('index.html', error=error_msg)
+                return jsonify({'code_content': formatted_code})
+        return jsonify({'error': "Failed to Convert Code. Please try again."}), 400
+    return jsonify({'error': "Please enter a valid code prompt."}), 400
 
 def generate_code(prompt):
     data = {
