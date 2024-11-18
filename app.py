@@ -6,7 +6,7 @@ import subprocess
 app = Flask(__name__, static_url_path='/static')
 logging.basicConfig(level=logging.DEBUG)
 
-API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=AIzaSyBfaJZk-ljrgGrnmOeg4wrQ3raKdhQnF1c"
+API_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=API_Key"
 
 DEFAULT_TEXT = "Convert Complete code this language: "
 
